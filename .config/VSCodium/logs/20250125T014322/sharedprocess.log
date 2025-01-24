@@ -1,5 +1,0 @@
-2025-01-25 01:43:23.556 [error] Error: ENOENT: no such file or directory, access '/run/user/1000/wayland-0'
-    at async Object.access (node:internal/original-fs/promises:606:10)
-    at async O9 (file:///opt/vscodium-bin/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:119:9457)
-    at async Promise.all (index 1)
-    at async h_.reportClientOSInfo (file:///opt/vscodium-bin/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:119:36411)
