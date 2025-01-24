@@ -1,0 +1,118 @@
+* {
+    font: "Figtree 13";
+    g-spacing: 10px;
+    g-margin: 0;
+    b-color: #AF5A53;      /* Background color */
+    fg-color: #c1c2c2;     /* Foreground color */
+    fgp-color: #565d6a;    /* Placeholder text color */
+    b-radius: 8px;
+    g-padding: 8px;
+    hl-color: #c1c2c2;     /* Highlight color */
+    hlt-color: #090B0E;    /* Highlight text color */
+    alt-color: #090B0E;    /* Alternate color */
+    wbg-color: #090B0E;    /* Window background color */
+    w-border: 2px solid;
+    w-border-color: #9BA6A4; /* Window border color */
+    w-padding: 12px;
+}
+
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    font:                       "Fira Sans 11";
+    show-icons:                 true;
+    icon-theme: "Adwaita";
+    display-drun:                "";
+    display-run:                 "";
+    display-filebrowser:         "";
+    display-window:              "";
+	drun-display-format:        "{name}";
+    hover-select:               false;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    
+}
+
+listview {
+    columns: 1;
+    lines: 5;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    border: 0px solid;
+}
+
+window {
+    transparency: "real";
+    width: 480px;
+    border-radius: @b-radius;
+    background-color: @wbg-color;
+    border: @w-border;
+    border-color: @w-border-color;
+    padding: @w-padding;
+}
+
+prompt {
+    text-color: @fg-color;
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: @g-spacing;
+}
+
+entry {
+    placeholder: "Seach";
+    text-color: @fg-color;
+    placeholder-color: @fgp-color;
+}
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    border: 0px solid;
+    border-radius: @b-radius;
+    border-color: @b-color;
+    background-color: transparent;
+    text-color: @fg-color;
+}
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element alternate.normal {
+	background-color: @alt-color;
+	text-color: @fg-color;
+}
+
+element selected.active {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+element selected.normal {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+element-icon {
+    size: 80px;  // Thumbnail size
+}
+
+message {
+    background-color: red;
+    border: 0px solid;
+}
+
