@@ -47,8 +47,8 @@ echo "Replaced nostalgia.jpg with $SELECTED"
 
 # Apply wallpaper and color scheme
 feh --bg-fill "$TARGET_WALLPAPER" --no-fehbg
-/home/riskirills/.local/bin/wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
-/home/riskirills/.local/bin/wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
+wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
+wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
 
 # Kill existing instances of hyprpaper and waybar
 killall hyprpaper
@@ -91,6 +91,9 @@ sed -i "s/--text-4: .*/--text-4: $color3;/" "$THEME_FILE"
 sed -i "s/--text-5: .*/--text-5: $foreground;/" "$THEME_FILE"
 
 echo "BetterDiscord theme updated with pywal colors."
+
+# Update Telegram Wal
+walogram
 
 # Step 1: List available icon themes from both directories
 ICON_THEMES=$(ls /usr/share/icons ~/.local/share/icons 2>/dev/null | sort -u)
