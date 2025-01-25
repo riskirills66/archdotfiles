@@ -96,7 +96,7 @@ button {
 #load,
 #custom-poweroff,
 #custom-bluetooth,
-#custom-rofi,
+#custom-appsmenu,
 #workspaces,
 #window {
     background: @background;
@@ -113,7 +113,7 @@ button {
 #mpris.playing,
 #network:hover,
 #custom-bluetooth:hover,
-#custom-rofi:hover,
+#custom-appsmenu:hover,
 #wireplumber:hover,
 #clock:hover {
     box-shadow: 0 0 .25rem @background, -.125rem -.125rem 1rem @color13, .125rem .125rem 1rem @color0;
@@ -131,10 +131,6 @@ button {
     font-weight: 500;
     box-shadow: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-#custom-rofi {
-    font-size: large;
 }
 
 #mode {

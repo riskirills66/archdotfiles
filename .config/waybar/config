@@ -2,6 +2,7 @@
     "height": 24,
     "spacing": 4,
     "modules-left": [
+        "custom/appsmenu",
         "hyprland/workspaces"
     ],
     "modules-center": [
@@ -63,6 +64,15 @@
         "on-click-right": "blueman-manager",
         "tooltip":false,
         "interval": 5
+    },
+    "custom/appsmenu": {
+        "exec": "echo Apps",
+        "tooltip": "Apps Menu",
+        "on-click": "rofi -show drun",
+        "on-click-right": "~/reload.sh",
+        "interval": 0,
+        "tooltip":false,
+        "icon-size": 14
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
