@@ -20,7 +20,7 @@ configuration {
     modi:                       "drun,filebrowser,window,run";
     font:                       "Fira Sans 11";
     show-icons:                 true;
-    icon-theme: "Papirus";
+    icon-theme: "BeautyDream-GTK";
     display-drun:                "";
     display-run:                 "";
     display-filebrowser:         "";
