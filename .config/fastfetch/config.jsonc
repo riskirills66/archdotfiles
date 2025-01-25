@@ -18,10 +18,6 @@
     },
     // System Information
     {
-      "type": "custom",
-      "format": "{#1}│ {#}System Information"
-    },
-    {
       "type": "os",
       "key": "{#separator}│  {#keys}󰍹 OS"
     },
@@ -29,24 +25,15 @@
       "type": "kernel",
       "key": "{#separator}│  {#keys}󰒋 Kernel"
     },
-    {
-      "type": "uptime",
-      "key": "{#separator}│  {#keys}󰅐 Uptime"
-    },
-    {
-      "type": "packages",
-      "key": "{#separator}│  {#keys}󰏖 Packages",
-      "format": "{all}"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Desktop Environment
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Desktop Environment"
-    },
+//    {
+//      "type": "uptime",
+//      "key": "{#separator}│  {#keys}󰅐 Uptime"
+//    },
+//    {
+//     "type": "packages",
+//      "key": "{#separator}│  {#keys}󰏖 Packages",
+//      "format": "{all}"
+//   },
     {
       "type": "de",
       "key": "{#separator}│  {#keys}󰧨 DE"
@@ -59,10 +46,10 @@
       "type": "wmtheme",
       "key": "{#separator}│  {#keys}󰉼 Theme"
     },
-    {
-      "type": "display",
-      "key": "{#separator}│  {#keys}󰹑 Resolution"
-    },
+//    {
+//      "type": "display",
+//      "key": "{#separator}│  {#keys}󰹑 Resolution"
+//    },
     {
       "type": "shell",
       "key": "{#separator}│  {#keys}󰞷 Shell"
@@ -70,15 +57,6 @@
     {
       "type": "terminalfont",
       "key": "{#separator}│  {#keys}󰛖 Font"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Hardware Information
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Hardware Information"
     },
     {
       "type": "cpu",
@@ -92,15 +70,11 @@
       "type": "memory",
       "key": "{#separator}│  {#keys}󰍛 Memory"
     },
-    {
-      "type": "disk",
-      "key": "{#separator}│  {#keys}󰋊 Disk (/)",
-      "folders": "/"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
+//    {
+//      "type": "disk",
+//      "key": "{#separator}│  {#keys}󰋊 Disk (/)",
+//      "folders": "/"
+//    },
     // Colors
     {
       "type": "colors",

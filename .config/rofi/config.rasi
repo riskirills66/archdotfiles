@@ -2,17 +2,17 @@
     font: "Figtree 13";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #0f0e1d;
-    fg-color: #FDC67A;
-    fgp-color: #7f7c82;
+    b-color: #0F1117;
+    fg-color: #1296DC;
+    fgp-color: #5b5f6f;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #FDC67A;
+    hl-color: #1296DC;
     hlt-color: #090B0E;    /* Highlight text color */
-    alt-color: #0f0e1d;
-    wbg-color: #0f0e1d;
+    alt-color: #0F1117;
+    wbg-color: #0F1117;
     w-border: 2px solid;
-    w-border-color: #FDC67A;
+    w-border-color: #1296DC;
     w-padding: 12px;
 }
 
