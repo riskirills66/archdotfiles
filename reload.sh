@@ -66,14 +66,16 @@ generate_thumbnails() {
     source ~/.cache/wal/colors.sh
 
     # Only replace color variables in the Rofi config file
-    sed -i "s/\$color1/$color1/" ~/.config/rofi/config.rasi
-    sed -i "s/\$color7/$color7/" ~/.config/rofi/config.rasi
-    sed -i "s/\$color8/$color8/" ~/.config/rofi/config.rasi
-    sed -i "s/\$color0/$color0/" ~/.config/rofi/config.rasi
-    sed -i "s/\$color14/$color14/" ~/.config/rofi/config.rasi
-    sed -i "s/\$color3/$color3/" ~/.config/rofi/config.rasi
+    sed -i "s/b-color: .*/b-color: $background;/" ~/.config/rofi/config.rasi
+    sed -i "s/fg-color: .*/fg-color: $color14;/" ~/.config/rofi/config.rasi
+    sed -i "s/hl-color: .*/hl-color: $color14;/" ~/.config/rofi/config.rasi
+    sed -i "s/fgp-color: .*/fgp-color: $color8;/" ~/.config/rofi/config.rasi
+    sed -i "s/w-border-color: .*/w-border-color: $color14;/" ~/.config/rofi/config.rasi
+    sed -i "s/wbg-color: .*/wbg-color: $background;/" ~/.config/rofi/config.rasi
+    sed -i "s/alt-color: .*/alt-color: $background;/" ~/.config/rofi/config.rasi
 
     echo "Rofi colors updated."
+
 
     # Path to BetterDiscord theme CSS
     THEME_FILE="/home/riskirills/.config/BetterDiscord/themes/midnight.theme.css"
@@ -92,6 +94,12 @@ generate_thumbnails() {
     sed -i "s/--text-5: .*/--text-5: $foreground;/" "$THEME_FILE"
 
     echo "BetterDiscord theme updated with pywal colors."
+
+    #Apply pywal colors to hyprland border window
+    sed -i "s/col.active_border = .*/col.active_border = rgba($color14)/" ~/.config/hypr/hyprland.conf
+    sed -i "s/col.active_border = rgba(#\([0-9A-Fa-f]\{6\}\))/col.active_border = rgba(\1FF)/" ~/.config/hypr/hyprland.conf
+    sed -i "s/col.inactive_border = .*/col.inactive_border = rgba($background)/" ~/.config/hypr/hyprland.conf
+    sed -i "s/col.inactive_border = rgba(#\([0-9A-Fa-f]\{6\}\))/col.inactive_border = rgba(\1FF)/" ~/.config/hypr/hyprland.conf
 }
 
 # Function to select and apply an icon theme
