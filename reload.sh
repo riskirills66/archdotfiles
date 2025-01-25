@@ -45,6 +45,8 @@ TARGET_WALLPAPER="$HOME/nostalgia.jpg"
 cp "$SELECTED_WALLPAPER_PATH" "$TARGET_WALLPAPER"
 echo "Replaced nostalgia.jpg with $SELECTED"
 
+rm -rf ~/.cache/wal
+
 # Apply wallpaper and color scheme
 feh --bg-fill "$TARGET_WALLPAPER" --no-fehbg
 wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
@@ -91,9 +93,6 @@ sed -i "s/--text-4: .*/--text-4: $color3;/" "$THEME_FILE"
 sed -i "s/--text-5: .*/--text-5: $foreground;/" "$THEME_FILE"
 
 echo "BetterDiscord theme updated with pywal colors."
-
-# Update Telegram Wal
-walogram
 
 # Step 1: List available icon themes from both directories
 ICON_THEMES=$(ls /usr/share/icons ~/.local/share/icons 2>/dev/null | sort -u)
