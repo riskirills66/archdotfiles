@@ -8,7 +8,7 @@
     b-radius: 8px;
     g-padding: 8px;
     hl-color: #4CB0CE;
-    hlt-color: #090B0E;    /* Highlight text color */
+    hlt-color: #090B0E;
     alt-color: #03162E;
     wbg-color: #03162E;
     w-border: 2px solid;
@@ -20,7 +20,7 @@ configuration {
     modi:                       "drun,filebrowser,window,run";
     font:                       "Fira Sans 11";
     show-icons:                 true;
-    icon-theme: "BeautyDream-GTK";
+    icon-theme: "BeautySolar";
     display-drun:                "";
     display-run:                 "";
     display-filebrowser:         "";
@@ -36,7 +36,7 @@ configuration {
 
 listview {
     columns: 1;
-    lines: 5;
+    lines: 8;
     fixed-height: true;
     fixed-columns: true;
     cycle: false;
@@ -108,7 +108,7 @@ element selected.normal {
 }
 
 element-icon {
-    size: 80px;  // Thumbnail size
+    size: 20px; 
 }
 
 message {
