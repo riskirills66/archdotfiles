@@ -88,6 +88,8 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
   - **blueman** is necessary only if you use Bluetooth devices.  
 - If you don’t plan to use Flatpak apps, **flatpak** can also be omitted.  
 
+---
+
 ### Command-Line Tools  
 
 The following command-line tools are useful for enhancing your workflow and system management. Install them using `pacman`:
@@ -136,8 +138,6 @@ sudo pacman -S cmus cava fastfetch yazi fzf swayimg
    cd ..
    ```
 
-Got it! Here's the revised and clarified version indicating that all AUR packages are required:
-
 ---
 
 ### AUR Packages  
@@ -165,13 +165,9 @@ yay -S python-pywal16 wlogout hyprshot xdg-desktop-portal-hyprland-git python-py
 - **python-pywalfox**:  
   A tool that syncs your Firefox theme with your Pywal-generated desktop color scheme. It ensures your browser matches the overall look of your desktop for a cohesive and polished experience.  
 
----
-
 ### Notes:  
 - These AUR packages are **required** for the proper functionality and customization of the Hyprland setup.  
 - Ensure that the **yay** AUR helper is installed beforehand (instructions for installing `yay` are provided earlier in this guide).  
-
-This section ensures users understand that these tools are essential for completing their setup. Let me know if you'd like further tweaks!
 
 To configure Pywalfox:
 ```bash
@@ -366,8 +362,6 @@ sudo systemctl enable --now sddm
   flatpak install flathub it.mijorus.smile
   ```
 
----
-
-### Note:
+### Notes:
 - **OpenVPN**, **Wine**, and the additional software listed above are entirely optional and are not dependencies for Hyprland setup.
 - Only install these if you require their functionality.
