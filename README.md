@@ -88,10 +88,37 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
   - **blueman** is necessary only if you use Bluetooth devices.  
 - If you don’t plan to use Flatpak apps, **flatpak** can also be omitted.  
 
-### Command-Line Tools
+### Command-Line Tools  
+
+The following command-line tools are useful for enhancing your workflow and system management. Install them using `pacman`:
+
 ```bash
 sudo pacman -S cmus cava fastfetch yazi fzf swayimg
 ```
+
+#### Breakdown of Packages:
+
+- **cmus**:  
+  A fast and lightweight music player for the terminal. It supports a variety of audio formats and provides a simple yet effective way to manage and play music directly from the command line. Perfect for users who prefer a keyboard-driven interface.
+
+- **cava**:  
+  A terminal-based audio visualizer that displays an interactive visualization of your system's audio output. It can be used alongside cmus or any other music player for a visually engaging experience while listening to music.
+
+- **fastfetch**:  
+  A fast and minimalistic system information tool for the terminal. It provides quick and attractive outputs like CPU, RAM, and GPU information, uptime, and more. It's often used to show off system specs in a clean and visually appealing way.
+
+- **yazi**:  
+  A terminal-based utility for navigating and managing directories. It provides an easy way to search through and open directories directly from the command line, improving your workflow when dealing with file systems.
+
+- **fzf**:  
+  A command-line fuzzy finder that allows you to quickly search and filter through files, directories, command history, and more. It's a powerful tool for enhancing productivity by speeding up file navigation and command execution.
+
+- **swayimg**:  
+  A simple image viewer for the terminal designed to work with the Sway compositor. It allows you to view images directly from the terminal window, which is handy for quick image viewing without leaving the command line.
+
+### Notes:  
+- These tools are **recommended** for enhancing your command-line experience, especially for media management (cmus, cava), system info (fastfetch), and file navigation (yazi, fzf).  
+- You can omit any tools that you don’t plan on using or don’t find useful for your specific workflow.
 
 ---
 
