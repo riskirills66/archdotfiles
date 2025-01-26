@@ -177,7 +177,7 @@ Run the following instructions to set **Yazi** as your default directory opener:
 
 1. Create a new `.desktop` file in `/usr/share/applications/`:
    ```bash
-   sudo nano /usr/share/applications/openinyazi.desktop
+   sudo nvim /usr/share/applications/openinyazi.desktop
    ```
 
 2. Add the following content to the file:
