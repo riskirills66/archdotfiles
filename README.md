@@ -2,6 +2,17 @@
 
 This guide covers the installation and configuration of essential tools and services for setting up Hyprland dotfiles.
 
+## Disclaimer
+
+Please note that some assets or configurations in this repository might not be entirely my own work. While I have made efforts to curate and organize these dotfiles, it is possible that third-party assets have been unintentionally included. 
+
+By using this repository, you acknowledge the following:
+- Use these dotfiles mindfully and at your own risk.
+- Do not use any part of this repository for commercial purposes or behind a paywall.
+- If you discover any specific assets that belong to someone else, please let me know so I can address it appropriately.
+
+Thank you for understanding!
+
 ## Prerequisites
 
 Ensure the following dependencies are installed:
