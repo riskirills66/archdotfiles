@@ -1,8 +1,0 @@
-{
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.location": "hidden",
-    "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Wal",
-    "terminal.integrated.fontFamily": "FiraMono Nerd Font",
-    "terminal.integrated.fontSize": 12
-}

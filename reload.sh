@@ -53,6 +53,24 @@ generate_thumbnails() {
     feh --bg-fill "$TARGET_WALLPAPER" --no-fehbg
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
+    sed -i "s|/home/.*|/home/$(whoami)/.cache/wal/colors-waybar.css');|" ~/.config/waybar/style.css
+
+    sed -i "s|/home/.*/.cache/wal/colors-waybar.css|/home/$(whoami)/.cache/wal/colors-waybar.css|" ~/.config/wlogout/style.css
+    sed -i "s|/home/.*/nostalgia.jpg|/home/$(whoami)/nostalgia.jpg|" ~/.config/wlogout/style.css
+
+    # Get the list of connected monitors
+    connected_monitors=$(xrandr | grep " connected" | awk '{print $1}')
+
+    # Clear the hyprpaper.conf file and set preload
+    echo "preload = ~/nostalgia.jpg" > ~/.config/hypr/hyprpaper.conf
+
+    # Loop through each connected monitor and set the wallpaper for it
+    for monitor in $connected_monitors; do
+    echo "wallpaper = $monitor, ~/nostalgia.jpg" >> ~/.config/hypr/hyprpaper.conf
+    done
+
+    # Disable splash screen
+    echo "splash = false" >> ~/.config/hypr/hyprpaper.conf
 
     # Kill existing instances of hyprpaper and waybar
     killall hyprpaper
@@ -78,7 +96,7 @@ generate_thumbnails() {
 
 
     # Path to BetterDiscord theme CSS
-    THEME_FILE="/home/riskirills/.config/BetterDiscord/themes/midnight.theme.css"
+    THEME_FILE="$HOME/.config/BetterDiscord/themes/midnight.theme.css"
 
     # Apply pywal colors to the midnight.theme.css file
     sed -i "s/--accent-1: .*/--accent-1: $color1;/" "$THEME_FILE"
