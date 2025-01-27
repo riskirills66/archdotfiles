@@ -14,3 +14,13 @@
 .config/VSCodium/logs/
 .config/VSCodium/Session Storage/
 .config/VSCodium/Shared Dictionary/
+.config/VSCodium/Cookies
+.config/VSCodium/Cookies-journal
+.config/VSCodium/languagepacks.json
+.config/VSCodium/machineid
+.config/VSCodium/Network Persistent State
+.config/VSCodium/Preferences
+.config/VSCodium/SharedStorage
+.config/VSCodium/TransportSecurity
+.config/VSCodium/Trust Tokens
+.config/VSCodium/Trust Tokens-journal

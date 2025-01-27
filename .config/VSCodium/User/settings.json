@@ -1,0 +1,9 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "bottom",
+    "window.customTitleBarVisibility": "auto",
+    "explorer.confirmDelete": false,
+    "terminal.integrated.fontFamily": "FiraMono Nerd Font",
+    "workbench.colorTheme": "Wal"
+}
