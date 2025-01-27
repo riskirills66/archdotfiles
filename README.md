@@ -190,6 +190,31 @@ sudo systemctl enable --now bluetooth.service
 ```bash
 sudo systemctl enable --now sddm
 ```
+---
+
+## Hyprland Desktop Setup Guide  
+
+Welcome to your new Hyprland desktop environment! After enabling **SDDM**, you’ll need to log in and set up your wallpaper to ensure **Waybar** functions properly.  
+
+### Initial Setup  
+Once inside the Hyprland environment, a script will launch **Rofi** with three menu options:  
+1. Select the first option: **`Wallpaper + Wal`**.  
+2. Choose a wallpaper from the list (located in the **Downloads** directory). This will update both your desktop background and theme.  
+
+### Changing Rofi Icon Themes  
+1. Ensure you’ve downloaded additional icon themes (search online for "Gnome icon themes").  
+2. Open the initiation menu: `Ctrl + Shift + Alt + Return`.
+3. Select the second option: **`Icon Selector`**.  
+4. Pick an icon theme from the available list.  
+
+### Updating the SDDM Wallpaper  
+1. Open the initiation menu: `Ctrl + Shift + Alt + Return`.  
+2. Select the third option: **`Change SDDM Wallpaper`**.  
+3. Enter your **sudo** password when prompted.  
+4. The script will automatically switch the **SDDM** theme to **Elarun** and set your current wallpaper as the SDDM background.  
+
+### Notes  
+- Ensure you have some images in your **Downloads** directory for the wallpaper selection menu to work. If no images are found, the script will automatically add a default wallpaper to the **Downloads** folder.  
 
 ---
 

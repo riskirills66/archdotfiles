@@ -43,8 +43,15 @@ generate_thumbnails() {
     # Path to replace nostalgia.jpg
     TARGET_WALLPAPER="$HOME/nostalgia.jpg"
 
-    # Replace nostalgia.jpg
-    cp "$SELECTED_WALLPAPER_PATH" "$TARGET_WALLPAPER"
+    # Convert to JPG if needed
+    FILE_EXTENSION="${SELECTED_WALLPAPER_PATH##*.}"
+    if [[ "$FILE_EXTENSION" != "jpg" ]]; then
+        echo "Converting $SELECTED to JPG format..."
+        magick "$SELECTED_WALLPAPER_PATH" "$TARGET_WALLPAPER"
+    else
+        cp "$SELECTED_WALLPAPER_PATH" "$TARGET_WALLPAPER"
+    fi
+    
     echo "Replaced nostalgia.jpg with $SELECTED"
 
     rm -rf ~/.cache/wal
@@ -54,7 +61,6 @@ generate_thumbnails() {
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
     sed -i "s|/home/.*|/home/$(whoami)/.cache/wal/colors-waybar.css');|" ~/.config/waybar/style.css
-
     sed -i "s|/home/.*/.cache/wal/colors-waybar.css|/home/$(whoami)/.cache/wal/colors-waybar.css|" ~/.config/wlogout/style.css
     sed -i "s|/home/.*/nostalgia.jpg|/home/$(whoami)/nostalgia.jpg|" ~/.config/wlogout/style.css
 
