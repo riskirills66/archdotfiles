@@ -2,17 +2,17 @@
     font: "Figtree 13";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #03162E;
-    fg-color: #4CB0CE;
-    fgp-color: #5e6773;
+    b-color: #1a010e;
+    fg-color: #CE4BBF;
+    fgp-color: #6b5762;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #4CB0CE;
+    hl-color: #CE4BBF;
     hlt-color: #090B0E;
-    alt-color: #03162E;
-    wbg-color: #03162E;
+    alt-color: #1a010e;
+    wbg-color: #1a010e;
     w-border: 2px solid;
-    w-border-color: #4CB0CE;
+    w-border-color: #CE4BBF;
     w-padding: 12px;
 }
 
