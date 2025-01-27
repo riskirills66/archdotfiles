@@ -49,7 +49,7 @@ Install Hyprland and other essential tools needed for your desktop environment s
 
 ```bash
 sudo pacman -S hyprland sddm flatpak hyprpaper hyprlock waybar cliphist dunst kitty rofi slurp \
-qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk ttf-fira-code \
+qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk systemd ttf-fira-code \
 pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look firefox
 ```
 
@@ -69,6 +69,7 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
 - **qt5-wayland / qt6-wayland**: Enables Wayland support for applications using Qt5 and Qt6 frameworks.  
 - **polkit-kde-agent**: A PolicyKit authentication agent for managing administrative actions.  
 - **grim**: A screenshot utility for Wayland.  
+- **systemd**: Systemd is a system and service manager for Linux, responsible for initializing the system, managing services, and handling various system tasks like process supervision and logging.
 - **noto-fonts / noto-fonts-cjk**: High-quality fonts with support for multiple languages, including Chinese, Japanese, and Korean (CJK).  
 - **ttf-fira-code**: A font with programming ligatures designed for developers.  
 - **pipewire**: A modern multimedia framework for handling audio and video streams.  
