@@ -215,7 +215,8 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 4. The script will automatically switch the **SDDM** theme to **Elarun** and set your current wallpaper as the SDDM background.  
 
 ### Notes  
-- Ensure you have some images in your **Downloads** directory for the wallpaper selection menu to work. If no images are found, the script will automatically add a default wallpaper to the **Downloads** folder.  
+- Ensure you have some images in your **Downloads** directory for the wallpaper selection menu to work. If no images are found, the script will automatically add a default wallpaper to the **Downloads** folder.
+- Right-clicking on the power icon in the Waybar will bring up this initiation menu.
 
 ---
 

@@ -53,6 +53,7 @@
         "exec": "echo \u00A0\u23fb\u00A0",
         "tooltip": "Power Off",
         "on-click": "wlogout",
+        "on-click-right": "~/reload.sh",
         "interval": 0,
         "tooltip":false,
         "icon-size": 14
@@ -68,7 +69,7 @@
         "exec": "echo Apps",
         "tooltip": "Apps Menu",
         "on-click": "rofi -show drun",
-        "on-click-right": "~/reload.sh",
+        "on-click-right": "~/fastfetch.sh",
         "interval": 0,
         "tooltip":false,
         "icon-size": 14

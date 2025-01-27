@@ -149,7 +149,7 @@ select_icon_theme() {
 # Function to change the SDDM wallpaper
 change_sddm_wallpaper() {
     # Launch a new terminal (kitty in this case) and run the script
-kitty -e bash -c "
+kitty --title "SDDM Wallpaper Change" -e bash -c "
   # Prompt for sudo password
   echo 'Please enter your sudo password to continue:'
   sudo -v
