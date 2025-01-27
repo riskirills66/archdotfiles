@@ -63,6 +63,8 @@ generate_thumbnails() {
     sed -i "s|/home/.*|/home/$(whoami)/.cache/wal/colors-waybar.css');|" ~/.config/waybar/style.css
     sed -i "s|/home/.*/.cache/wal/colors-waybar.css|/home/$(whoami)/.cache/wal/colors-waybar.css|" ~/.config/wlogout/style.css
     sed -i "s|/home/.*/nostalgia.jpg|/home/$(whoami)/nostalgia.jpg|" ~/.config/wlogout/style.css
+    
+    mkdir -p ~/.config/hypr  # Create the directory if it doesn't exist
 
     # Get the list of connected monitors
     connected_monitors=$(xrandr | grep " connected" | awk '{print $1}')
