@@ -60,8 +60,7 @@
     },
     "custom/bluetooth": {
         "exec": "~/.config/waybar/scripts/bluetooth_tooltip.sh",
-        "on-click": "~/.config/waybar/scripts/bluetooth_tooltip.sh toggle",
-        "on-click-right": "blueman-manager",
+        "on-click": "blueman-manager",
         "tooltip":false,
         "interval": 5
     },

@@ -126,6 +126,30 @@ generate_thumbnails() {
     sed -i "s/col.active_border = rgba(#\([0-9A-Fa-f]\{6\}\))/col.active_border = rgba(\1FF)/" ~/.config/hypr/hyprland.conf
     sed -i "s/col.inactive_border = .*/col.inactive_border = rgba($background)/" ~/.config/hypr/hyprland.conf
     sed -i "s/col.inactive_border = rgba(#\([0-9A-Fa-f]\{6\}\))/col.inactive_border = rgba(\1FF)/" ~/.config/hypr/hyprland.conf
+
+    # Path to Ghostty Pywal Theme
+    THEME_PYWAL_FILE="$HOME/.config/ghostty/themes/pywal"
+
+    # Apply Pywal Ghostty Theme
+    sed -i "palette = 0= .*/palette = 0=$color0" "$THEME_PYWAL_FILE"
+    sed -i "palette = 1= .*/palette = 1=$color1" "$THEME_PYWAL_FILE"
+    sed -i "palette = 2= .*/palette = 2=$color2" "$THEME_PYWAL_FILE"
+    sed -i "palette = 3= .*/palette = 3=$color3" "$THEME_PYWAL_FILE"
+    sed -i "palette = 4= .*/palette = 4=$color4" "$THEME_PYWAL_FILE"
+    sed -i "palette = 5= .*/palette = 5=$color5" "$THEME_PYWAL_FILE"
+    sed -i "palette = 6= .*/palette = 6=$color6" "$THEME_PYWAL_FILE"
+    sed -i "palette = 7= .*/palette = 7=$color7" "$THEME_PYWAL_FILE"
+    sed -i "palette = 8= .*/palette = 8=$color8" "$THEME_PYWAL_FILE"
+    sed -i "palette = 9= .*/palette = 9=$color9" "$THEME_PYWAL_FILE"
+    sed -i "palette = 10= .*/palette = 10=$color10" "$THEME_PYWAL_FILE"
+    sed -i "palette = 11= .*/palette = 11=$color11" "$THEME_PYWAL_FILE"
+    sed -i "palette = 12= .*/palette = 12=$color12" "$THEME_PYWAL_FILE"
+    sed -i "palette = 13= .*/palette = 13=$color13" "$THEME_PYWAL_FILE"
+    sed -i "palette = 14= .*/palette = 14=$color14" "$THEME_PYWAL_FILE"
+    sed -i "palette = 15= .*/palette = 15=$color15" "$THEME_PYWAL_FILE"
+    sed -i "background = .*/background =  $background" "$THEME_PYWAL_FILE"
+    sed -i "foreground = .*/foreground =  $foreground" "$THEME_PYWAL_FILE"
+    sed -i "cursor-color = .*/cursor-color =  $cursor" "$THEME_PYWAL_FILE"
 }
 
 # Function to select and apply an icon theme
