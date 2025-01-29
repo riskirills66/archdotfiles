@@ -5,5 +5,8 @@
     "window.customTitleBarVisibility": "auto",
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "FiraMono Nerd Font",
-    "workbench.colorTheme": "Wal"
+    "workbench.colorTheme": "Wal",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
 }
