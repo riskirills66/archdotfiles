@@ -49,8 +49,8 @@ Install Hyprland and other essential tools needed for your desktop environment s
 
 ```bash
 sudo pacman -S hyprland sddm flatpak hyprpaper hyprlock waybar cliphist dunst ghostty dolphin rofi slurp \
-qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk systemd ttf-fira-code \
-pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look firefox
+qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk noto-fonts-emoji systemd ttf-fira-code xorg-xrandr \
+pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look rofi-emoji firefox
 ```
 
 #### Breakdown of Packages:  
@@ -188,11 +188,24 @@ pywalfox install
 sudo systemctl enable --now bluetooth.service
 ```
 
+### Enable Network Manager
+```bash
+sudo systemctl enable --now NetworkManager 
+```
+
 ### Enable SDDM (Display Manager)
 ```bash
 sudo systemctl enable --now sddm
 ```
 ---
+
+## Zsh Setup
+
+1. Install and set Zsh as the default shell:
+   ```bash
+   sudo pacman -S zsh
+   chsh -s $(which zsh)
+   ```
 
 ## Hyprland Desktop Setup Guide  
 
@@ -221,31 +234,25 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 
 ---
 
-## Zsh Setup
+## Oh My Zsh Setup
 
-1. Install and set Zsh as the default shell:
-   ```bash
-   sudo pacman -S zsh
-   chsh -s $(which zsh)
-   ```
-
-2. Install **Oh My Zsh**:
+1. Install **Oh My Zsh**:
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-3. Add plugins:
+2. Add plugins:
    ```bash
    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
    ```
 
-4. Install **Powerlevel10k**:
+3. Install **Powerlevel10k**:
    ```bash
    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
    ```
 
-5. Update `.zshrc`:
+4. Update `.zshrc`:
    ```bash
    nvim ~/.zshrc
    ```
@@ -294,6 +301,10 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
    sudo touch /etc/openvpn/client.conf
    sudo touch /etc/openvpn/auth.txt
    ```
+   Set permission for configuration:
+   ```bash
+   sudo chmod 644 /etc/openvpn/auth.txt
+   sudo chmod 600 /etc/openvpn/client.conf
 
 2. **Add OpenVPN Configuration**:
    Open `/etc/openvpn/client.conf`:
@@ -323,6 +334,18 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
    ```
 
 4. **Enable and Start OpenVPN Service**:
+   ```bash
+   sudo systemctl edit openvpn-client@client.service
+   ```
+
+   add
+   ```bash
+   [Service]
+   ExecStart=
+   ExecStart=/usr/bin/openvpn --suppress-timestamps --nobind --config /etc/openvpn/client.conf
+   ``` 
+   
+   start service
    ```bash
    sudo systemctl daemon-reload
    sudo systemctl enable --now openvpn-client@client.service
