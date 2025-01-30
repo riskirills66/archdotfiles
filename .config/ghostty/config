@@ -1,0 +1,28 @@
+background-opacity = 0.5
+window-decoration = false
+theme = pywal
+font-size = 10
+gtk-adwaita = false
+confirm-close-surface = false
+
+font-family = FiraCode-Light
+font-family-bold = auto 
+font-family-italic = auto
+font-family-bold-italic = auto
+
+window-padding-x = 10
+window-padding-y = 10
+
+window-padding-balance = true
+window-vsync = true
+window-theme = dark
+
+window-height = 600
+window-width = 800
+
+clipboard-read = allow
+clipboard-write = allow
+
+shell-integration =zsh
+cursor-opacity = 0.8
+

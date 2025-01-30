@@ -124,6 +124,6 @@
         "tooltip-format-ethernet": "\uef44 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "kitty --class dotfiles-floating -e nmtui"
+        "on-click": "ghostty --title=nmtui -e nmtui"
     }
 }]

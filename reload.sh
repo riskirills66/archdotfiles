@@ -58,7 +58,6 @@ generate_thumbnails() {
 
     # Apply wallpaper and color scheme
     feh --bg-fill "$TARGET_WALLPAPER" --no-fehbg
-    wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-kitty.conf
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
     sed -i "s|/home/.*|/home/$(whoami)/.cache/wal/colors-waybar.css');|" ~/.config/waybar/style.css
     sed -i "s|/home/.*/.cache/wal/colors-waybar.css|/home/$(whoami)/.cache/wal/colors-waybar.css|" ~/.config/wlogout/style.css
@@ -174,8 +173,8 @@ select_icon_theme() {
 
 # Function to change the SDDM wallpaper
 change_sddm_wallpaper() {
-    # Launch a new terminal (kitty in this case) and run the script
-kitty --title "SDDM Wallpaper Change" -e bash -c "
+    # Launch a new terminal (in this case) and run the script
+ghostty --title='SDDM Wallpaper Change' -e bash -c "
   # Prompt for sudo password
   echo 'Please enter your sudo password to continue:'
   sudo -v
@@ -238,11 +237,11 @@ kitty --title "SDDM Wallpaper Change" -e bash -c "
     exit 1
   fi
 
-  # Wait for any key press to exit the terminal and kill kitty terminal
+  # Wait for any key press to exit the terminal and kill ghostty terminal
   echo 'Press any key to exit...'
   read -n 1 -s
 
-  # Exit the terminal after key press (will now close kitty window)
+  # Exit the terminal after key press (will now close ghostty window)
   exit
 "
 }

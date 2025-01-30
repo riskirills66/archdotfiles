@@ -48,7 +48,7 @@ sudo pacman -S git stow vim nvim ntfs-3g make cmake gcc python3
 Install Hyprland and other essential tools needed for your desktop environment setup. The following packages are included in the command below, with a brief explanation of their purpose:
 
 ```bash
-sudo pacman -S hyprland sddm flatpak hyprpaper hyprlock waybar cliphist dunst kitty rofi slurp \
+sudo pacman -S hyprland sddm flatpak hyprpaper hyprlock waybar cliphist dunst ghostty dolphin rofi slurp \
 qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk systemd ttf-fira-code \
 pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look firefox
 ```
@@ -63,7 +63,8 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
 - **waybar**: A customizable status bar for Wayland-based environments.  
 - **cliphist**: Clipboard history manager for managing copied text and images.  
 - **dunst**: A lightweight notification daemon to display desktop notifications.  
-- **kitty**: A fast, GPU-accelerated terminal emulator.  
+- **ghostty**: A fast terminal emulator. 
+- **dolphin**: A kde bundled file manager. 
 - **rofi**: A window switcher, application launcher, and dmenu replacement.  
 - **slurp**: A tool to select regions of the screen (useful for screenshots).  
 - **qt5-wayland / qt6-wayland**: Enables Wayland support for applications using Qt5 and Qt6 frameworks.  

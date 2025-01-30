@@ -1,2 +1,2 @@
 #!/bin/bash
-kitty --title "Fastfetch" --hold fastfetch -l "arch_small"
+ghostty --title=Fastfetch -e 'fastfetch -l "arch_small"; zsh'
