@@ -97,7 +97,7 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
 The following command-line tools are useful for enhancing your workflow and system management. Install them using `pacman`:
 
 ```bash
-sudo pacman -S cmus cava fastfetch yazi fzf swayimg
+sudo pacman -S cmus cava fastfetch yazi fzf swayimg ripgrep
 ```
 
 #### Breakdown of Packages:
