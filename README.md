@@ -50,7 +50,7 @@ Install Hyprland and other essential tools needed for your desktop environment s
 ```bash
 sudo pacman -S hyprland sddm flatpak hyprpaper hyprlock waybar cliphist xclip dunst ghostty dolphin rofi slurp \
 qt5-wayland qt6-wayland polkit-kde-agent grim noto-fonts noto-fonts-cjk noto-fonts-emoji systemd ttf-fira-code xorg-xrandr \
-pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look rofi-emoji firefox
+pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick nwg-look mpv rofi-emoji firefox
 ```
 
 #### Breakdown of Packages:  
