@@ -368,7 +368,7 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 ### Additional Software
 #### TUI Tools
 
-  pacman:
+pacman:
   ```bash
   sudo pacman -S yazi fzf swayimg ripgrep cmus
   ```
@@ -384,7 +384,7 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 - **cmus**:  
   A fast and lightweight music player for the terminal. It supports a variety of audio formats and provides a simple yet effective way to manage and play music directly from the command line. Perfect for users who prefer a keyboard-driven interface.
 
-  yay:
+yay:
   ```bash
   yay -S Cava
   yay -S nchat-git
