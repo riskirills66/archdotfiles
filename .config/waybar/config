@@ -68,7 +68,7 @@
         "exec": "echo Apps",
         "tooltip": "Apps Menu",
         "on-click": "rofi -show drun",
-        "on-click-right": "~/fastfetch.sh",
+        "on-click-right": "~/scripts/fastfetch.sh",
         "interval": 0,
         "tooltip":false,
         "icon-size": 14

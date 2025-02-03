@@ -24,3 +24,4 @@
 .config/VSCodium/TransportSecurity
 .config/VSCodium/Trust Tokens
 .config/VSCodium/Trust Tokens-journal
+.config/nvim/$MYVIMDIR/
