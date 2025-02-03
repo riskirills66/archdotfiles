@@ -10,9 +10,12 @@
     ],
     "modules-right": [
         "mpris",
-        "custom/bluetooth",
+	"custom/bluetooth",
         "wireplumber",
         "network",
+	"memory",
+	"cpu",
+	"disk",
         "tray",
         "clock",
         "battery",
@@ -21,9 +24,9 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f\udb80\udd2f",
-            "default": "\udb80\udd2f",
-            "empty": "\udb80\udd2f"
+            "active": "\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64",
+            "default": "\udb81\udf64",
+            "empty": "\udb81\udf64"
         },
         "persistent-workspaces": {
             "*": [1, 2, 3, 4, 5]
@@ -50,6 +53,12 @@
         "icon-size": 14,
         "spacing": 10
     },
+    "custom/bluetooth": {
+    	"exec": "echo \uf293",
+        "on-click": "blueman-manager",
+        "tooltip":false,
+        "interval": 5
+    },
     "custom/poweroff": {
         "exec": "echo \u00A0\u23fb\u00A0",
         "tooltip": "Power Off",
@@ -58,12 +67,6 @@
         "interval": 0,
         "tooltip":false,
         "icon-size": 14
-    },
-    "custom/bluetooth": {
-        "exec": "~/.config/waybar/scripts/bluetooth_tooltip.sh",
-        "on-click": "blueman-manager",
-        "tooltip":false,
-        "interval": 5
     },
     "custom/appsmenu": {
         "exec": "echo Apps",
