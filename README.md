@@ -362,7 +362,18 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
    ```bash
    WINEPREFIX=~/32 wine start /d /path/to/executable_dir app_name.exe
    ```
-
+5. Create desktop entry for wine application:
+   Create ~/.local/share/applications/applicationname.desktop
+   ```bash
+   [Desktop Entry]
+   Version=1.0
+   Type=Application
+   Name=Application Name 
+   Exec=bash -c "WINEPREFIX=~/32 wine start /d /path/to/application application.exe"
+   Icon=wine
+   Terminal=false
+   Categories=Office;
+   ```
 ---
 
 ### Additional Software
