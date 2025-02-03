@@ -276,6 +276,14 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 
    # fzf keybind
    eval "$(fzf --zsh)"
+
+   # Zoxide
+   eval "$(zoxide init zsh)"
+   alias cd="z"
+   alias python="python3"
+
+   # vim = nvim alias
+   alias vim=nvim
    ```
 
 ---

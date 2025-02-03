@@ -4,6 +4,7 @@
     font-size: 13px;
     min-height: 0;
     /* border-radius: 5px; */
+    margin : 2px 0 1px 0;
 }
 
 window#waybar {
@@ -27,15 +28,15 @@ window#waybar.empty #window {
 
 
 .modules-right {
-    margin: 0 10px 0px 0;
+    margin: 0px 10px 0px 0;
 }
 
 .modules-center {
-    margin: 0 0 0px 0;
+    margin: 0px 0 0px 0;
 }
 
 .modules-left {
-    margin: 0 0 0px 10px;
+    margin: 0px 0 0px 10px;
 }
 
 button {
