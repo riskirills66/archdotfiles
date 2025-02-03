@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    font-family:DepartureMono Nerd Font, Fira Code Regular, monospace;
+    font-family: Fira Sans Code, monospace;
     background-color: @background;
     border-bottom: 0px;
     color: #FFFFFF;

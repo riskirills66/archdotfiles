@@ -18,7 +18,7 @@
 configuration {
     modi:                       "drun,filebrowser,window,run";
     show-icons:                 true;
-    font: "DepartureMono Nerd Font 12";
+    font: "Fira Sans Code 12";
     icon-theme: "BeautySolar";
     display-drun:                "";
     display-run:                 "";

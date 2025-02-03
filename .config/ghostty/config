@@ -1,11 +1,11 @@
 background-opacity = 0.8
 window-decoration = false
 theme = pywal
-font-size = 10
+font-size = 10 
 gtk-adwaita = false
 confirm-close-surface = false
 
-font-family = FiraCode-Light
+font-family = Fira Sans Code 
 font-family-bold = auto 
 font-family-italic = auto
 font-family-bold-italic = auto
