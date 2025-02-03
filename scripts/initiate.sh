@@ -4,7 +4,7 @@
 WAL_DIR="$HOME/.cache/wal"
 
 # Path to the script to be run
-RELOAD_SCRIPT="$HOME/reload.sh"
+RELOAD_SCRIPT="$HOME/scripts/reload.sh"
 
 # Source and destination for the image
 IMAGE_SOURCE="$HOME/.config/hypr/defaultwal/tokyo_night_ms_designer.jpeg"

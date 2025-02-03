@@ -24,7 +24,7 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64\udb81\udf64",
+	    "active" : "\udb81\udf64",
             "default": "\udb81\udf64",
             "empty": "\udb81\udf64"
         },
@@ -60,10 +60,10 @@
         "interval": 5
     },
     "custom/poweroff": {
-        "exec": "echo \u00A0\u23fb\u00A0",
+        "exec": "echo \uf011",
         "tooltip": "Power Off",
         "on-click": "wlogout",
-        "on-click-right": "~/reload.sh",
+        "on-click-right": "~/scripts/reload.sh",
         "interval": 0,
         "tooltip":false,
         "icon-size": 14

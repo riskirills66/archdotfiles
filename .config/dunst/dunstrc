@@ -28,10 +28,11 @@
     height = (0,300)
 
     # Position the notification in the top right corner
-    origin = top-center
+    # origin = top-center 
+    origin = bottom-right
 
     # Offset from the origin
-    offset = 30x30
+    offset = 20, 20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -199,7 +200,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = "Papirus-Dark,Adwaita"
+    icon_theme = "BeautySolar,Papirus-Dark,Adwaita"
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
