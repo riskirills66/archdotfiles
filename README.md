@@ -20,7 +20,7 @@ Thank you for your understanding!
 ### General Tools
 Install the necessary dependencies:
 ```bash
-sudo pacman -S git stow vim nvim ntfs-3g make cmake gcc python3
+sudo pacman -S git stow vim neovim ntfs-3g make cmake gcc python3
 ```
 
 ---
@@ -97,28 +97,13 @@ pipewire networkmanager htop pavucontrol blueman openvpn unrar unzip imagemagick
 The following command-line tools are useful for enhancing your workflow and system management. Install them using `pacman`:
 
 ```bash
-sudo pacman -S cmus cava fastfetch yazi fzf swayimg ripgrep
+sudo pacman -S fastfetch 
 ```
 
 #### Breakdown of Packages:
 
-- **cmus**:  
-  A fast and lightweight music player for the terminal. It supports a variety of audio formats and provides a simple yet effective way to manage and play music directly from the command line. Perfect for users who prefer a keyboard-driven interface.
-
-- **cava**:  
-  A terminal-based audio visualizer that displays an interactive visualization of your system's audio output. It can be used alongside cmus or any other music player for a visually engaging experience while listening to music.
-
 - **fastfetch**:  
   A fast and minimalistic system information tool for the terminal. It provides quick and attractive outputs like CPU, RAM, and GPU information, uptime, and more. It's often used to show off system specs in a clean and visually appealing way.
-
-- **yazi**:  
-  A terminal-based utility for navigating and managing directories. It provides an easy way to search through and open directories directly from the command line, improving your workflow when dealing with file systems.
-
-- **fzf**:  
-  A command-line fuzzy finder that allows you to quickly search and filter through files, directories, command history, and more. It's a powerful tool for enhancing productivity by speeding up file navigation and command execution.
-
-- **swayimg**:  
-  A simple image viewer for the terminal designed to work with the Sway compositor. It allows you to view images directly from the terminal window, which is handy for quick image viewing without leaving the command line.
 
 ### Notes:  
 - These tools are **recommended** for enhancing your command-line experience, especially for media management (cmus, cava), system info (fastfetch), and file navigation (yazi, fzf).  
@@ -178,7 +163,19 @@ To configure Pywalfox:
 ```bash
 pywalfox install
 ```
+---
 
+## Zsh Setup
+
+1. Install and set Zsh as the default shell:
+   ```bash
+   sudo pacman -S zsh
+   chsh -s $(which zsh)
+   ```
+2. Relogin Session
+   ```bash
+   exit
+   ```
 ---
 
 ## Service Configuration
@@ -198,15 +195,6 @@ sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now sddm
 ```
 ---
-
-## Zsh Setup
-
-1. Install and set Zsh as the default shell:
-   ```bash
-   sudo pacman -S zsh
-   chsh -s $(which zsh)
-   ```
-
 ## Hyprland Desktop Setup Guide  
 
 Welcome to your new Hyprland desktop environment! After enabling **SDDM**, you’ll need to log in and set up your wallpaper to ensure **Waybar** functions properly.  
@@ -378,6 +366,33 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 ---
 
 ### Additional Software
+#### TUI Tools
+
+  pacman:
+  ```bash
+  sudo pacman -S yazi fzf swayimg ripgrep cmus
+  ```
+- **yazi**:  
+  A terminal-based utility for navigating and managing directories. It provides an easy way to search through and open directories directly from the command line, improving your workflow when dealing with file systems.
+
+- **fzf**:  
+  A command-line fuzzy finder that allows you to quickly search and filter through files, directories, command history, and more. It's a powerful tool for enhancing productivity by speeding up file navigation and command execution.
+
+- **swayimg**:  
+  A simple image viewer for the terminal designed to work with the Sway compositor. It allows you to view images directly from the terminal window, which is handy for quick image viewing without leaving the command line.
+
+- **cmus**:  
+  A fast and lightweight music player for the terminal. It supports a variety of audio formats and provides a simple yet effective way to manage and play music directly from the command line. Perfect for users who prefer a keyboard-driven interface.
+
+  yay:
+  ```bash
+  yay -S Cava
+  yay -S nchat-git
+  ```
+
+- **cava**:  
+  A terminal-based audio visualizer that displays an interactive visualization of your system's audio output. It can be used alongside cmus or any other music player for a visually engaging experience while listening to music.
+
 
 #### GUI Tools
 - **LibreOffice**:  
@@ -414,6 +429,59 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 - **Smile**:  
   ```bash
   flatpak install flathub it.mijorus.smile
+  ```
+
+### Set Yazi and Swayimg as defaults:
+
+#### Setting Yazi as the Default Directory Opener
+1. Create a .desktop File
+  Create a .desktop entry file to integrate Yazi with your system. Save the following content as ~/.local/share/applications/openinyazi.desktop:
+
+  ```bash
+  [Desktop Entry]
+  Version=1.0
+  Name=Open in Yazi
+  Comment=Open Yazi in a Ghostty terminal window
+  Exec=/home/your-username/scripts/openinyazi.sh %U
+  Icon=utilities-terminal
+  Terminal=false
+  Type=Application
+  Categories=Utility;
+  MimeType=x-scheme-handler/file;[Desktop Entry]
+  ```
+  Replace `your-username` with your actual username.
+  
+2. Set Yazi as Default Directory Opener:
+  Use xdg-mime to set Yazi as the default handler for directories:
+  ```bash
+  xdg-mime default openinyazi.desktop inode/directory
+  ```
+
+#### Setting Swayimg as Default Image Opener:
+1. Create a .desktop File for Swayimg
+  Create a .desktop entry file for Swayimg in ~/.local/share/applications/swayimg.desktop:
+
+  ```bash
+  [Desktop Entry]
+  Name=Swayimg
+  Comment=Lightweight image viewer for Wayland
+  Exec=swayimg %f
+  Terminal=false
+  Type=Application
+  MimeType=image/png;image/jpeg;image/gif;image/bmp;image/webp;image/tiff;image/x-icon;
+  Categories=Graphics;Viewer;
+  ```
+2. Set Swayimg as Default Image Viewer
+  Use xdg-mime to set Swayimg as the default handler for images:
+
+  ```bash
+  xdg-mime default swayimg.desktop image/png
+  xdg-mime default swayimg.desktop image/jpeg
+  xdg-mime default swayimg.desktop image/gif
+  xdg-mime default swayimg.desktop image/bmp
+  xdg-mime default swayimg.desktop image/webp
+  xdg-mime default swayimg.desktop image/tiff
+  xdg-mime default swayimg.desktop image/x-icon
   ```
 
 ### Notes:
