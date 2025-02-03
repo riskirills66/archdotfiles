@@ -381,7 +381,7 @@ Once inside the Hyprland environment, a script will launch **Rofi** with three m
 
 pacman:
   ```bash
-  sudo pacman -S yazi fzf swayimg ripgrep cmus
+  sudo pacman -S yazi fzf swayimg ripgrep cmus ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick
   ```
 - **yazi**:  
   A terminal-based utility for navigating and managing directories. It provides an easy way to search through and open directories directly from the command line, improving your workflow when dealing with file systems.

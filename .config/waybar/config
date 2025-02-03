@@ -1,4 +1,5 @@
 [{
+    "position": "bottom",
     "spacing": 4,
     "modules-left": [
         "custom/appsmenu",

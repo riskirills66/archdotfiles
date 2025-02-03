@@ -3,12 +3,12 @@
 * {
     font-size: 13px;
     min-height: 0;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 window#waybar {
     font-family: Fira Code Regular, monospace;
-    background-color: transparent;
+    background-color: @background;
     border-bottom: 0px;
     color: #FFFFFF;
     transition-property: background-color;
@@ -27,15 +27,15 @@ window#waybar.empty #window {
 
 
 .modules-right {
-    margin: 10px 10px 0 0;
+    margin: 0 10px 0px 0;
 }
 
 .modules-center {
-    margin: 10px 0 0 0;
+    margin: 0 0 0px 0;
 }
 
 .modules-left {
-    margin: 10px 0 0 10px;
+    margin: 0 0 0px 10px;
 }
 
 button {
@@ -100,12 +100,12 @@ button {
 #custom-appsmenu,
 #workspaces,
 #window {
-    background: @background;
-    background-size: 300% 300%;
-    border: 0;
-    border-radius: 15px;
-    box-shadow: inset 0 0 0 1px @color14;
-    color: @color14;
+    background: @transparent;
+    /* background-size: 300% 300%; */
+    /* border: 0; */
+    /* border-radius: 15px; */
+    /* box-shadow: inset 0 0 0 1px @color14; */
+    /* color: @color14; */
     outline: transparent;
     padding: 0 1rem;
     text-decoration: none;
