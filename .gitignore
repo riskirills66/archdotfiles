@@ -25,3 +25,5 @@
 .config/VSCodium/Trust Tokens
 .config/VSCodium/Trust Tokens-journal
 .config/nvim/$MYVIMDIR/
+.config/go/
+.config/nchat/
