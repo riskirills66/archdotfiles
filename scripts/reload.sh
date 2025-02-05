@@ -247,7 +247,7 @@ ghostty --title='SDDM Wallpaper Change' -e bash -c "
 }
 
 # Main menu to choose between wallpaper + wal, icon theme, or change SDDM wallpaper
-MAIN_MENU=$(echo -e "Wallpaper + Wal\nIcons Selector\nChange SDDM Wallpaper" | rofi -dmenu -p "Select Option")
+MAIN_MENU=$(echo -e "Wallpaper + Wal\nIcons Selector\nChange SDDM Wallpaper" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Option")
 
 # Run the selected option
 if [ "$MAIN_MENU" == "Wallpaper + Wal" ]; then

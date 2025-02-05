@@ -1,5 +1,8 @@
 #!/bin/bash
 
+pgrep -f "wl-paste --type text" || wl-paste --type text --watch cliphist store &
+pgrep -f "wl-paste --type image" || wl-paste --type image --watch cliphist store &
+
 # Path to the directory
 WAL_DIR="$HOME/.cache/wal"
 

@@ -22,16 +22,9 @@
         "custom/poweroff",
     ],
     "sway/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-	    "active" : "\udb81\udf64",
-            "default": "\udb81\udf64",
-            "empty": "\udb81\udf64"
-        },
-        "persistent-workspaces": {
-            "*": [1, 2, 3, 4, 5]
-        }
-    },
+		"disable-scroll": true,
+		"format": "{name}"
+	},
     "sway/window": {
         "format": "{title}",
         "max-length": 40,
@@ -71,7 +64,7 @@
     "custom/appsmenu": {
         "exec": "echo Apps",
         "tooltip": "Apps Menu",
-        "on-click": "rofi -show drun",
+        "on-click": "~/scripts/rofi.sh",
         "on-click-right": "~/scripts/fastfetch.sh",
         "interval": 0,
         "tooltip":false,
