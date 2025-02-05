@@ -27,3 +27,9 @@
 .config/nvim/$MYVIMDIR/
 .config/go/
 .config/nchat/
+.config/cava/
+.config/cmus/
+.config/mimeapps.list
+.config/pulse/
+.config/wslu/
+.config/ytt/
