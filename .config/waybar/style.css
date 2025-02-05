@@ -9,7 +9,7 @@
 
 window#waybar {
     font-family: Fira Sans Code, monospace;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @background;
     border-bottom: 0px;
     color: #FFFFFF;
     transition-property: background-color;

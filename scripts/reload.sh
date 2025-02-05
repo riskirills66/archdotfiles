@@ -148,6 +148,7 @@ generate_thumbnails() {
     sed -i "s/^palette = 15=.*/palette = 15=$color15/" "$THEME_PYWAL_FILE"
     sed -i "s/^foreground = .*/foreground = $foreground/" "$THEME_PYWAL_FILE"
     sed -i "s/^cursor-color = .*/cursor-color = $cursor/" "$THEME_PYWAL_FILE"
+    sed -i "s/^background = .*/background = $background/" "$THEME_PYWAL_FILE"
 }
 
 # Function to select and apply an icon theme
