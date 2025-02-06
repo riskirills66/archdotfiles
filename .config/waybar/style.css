@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    font-family: Fira Sans Code, monospace;
+    font-family: Fira Mono Nerd Font, monospace;
     background-color: rgba(0, 0, 0, 0.5);
     border-bottom: 0px;
     color: #FFFFFF;
