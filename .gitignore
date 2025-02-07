@@ -33,3 +33,7 @@
 .config/pulse/
 .config/wslu/
 .config/ytt/
+.config/tmux/plugins/tmux-sensible
+.config/tmux/plugins/tmux-yank
+.config/tmux/plugins/tpm
+.config/tmux/plugins/vim-tmux-navigator

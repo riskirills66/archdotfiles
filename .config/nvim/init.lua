@@ -3,6 +3,7 @@ require("options")
 require("config.lazy")
 require("plugins.keymaps")
 require("plugins.options")
+require("core.mappings")
 
 -- Default to system clipboard
 vim.opt.clipboard = "unnamedplus"
