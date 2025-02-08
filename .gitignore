@@ -37,3 +37,5 @@
 .config/tmux/plugins/tmux-yank
 .config/tmux/plugins/tpm
 .config/tmux/plugins/vim-tmux-navigator
+.config/tmux/plugins/tmux-resurrect
+.config/tmux/plugins/
