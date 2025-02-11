@@ -24,13 +24,13 @@
         {
             "key": "│ {#31} user    {#keys}│",
             "type": "title",
-            "format": "{user-name}"
+            "format": "{user-name}-{host-name}"
         },
-        {
-            "key": "│ {#32}󰇅 hname   {#keys}│",
-            "type": "title",
-            "format": "{host-name}"
-        },
+        // {
+        //     "key": "│ {#32}󰇅 hname   {#keys}│",
+        //     "type": "title",
+        //     "format": "{host-name}"
+        // },
         // {
         //     "key": "│ {#33}󰅐 uptime  {#keys}│",
         //     "type": "uptime"
@@ -60,32 +60,40 @@
             "type": "cpu",
             "showPeCoreCount": true
         },
-        // {
+        {
+            "key": "│ {#34}󰢮 gpu     {#keys}│",
+            "type": "gpu"
+        },
+	// {
         //     "key": "│ {#34}󰉉 disk    {#keys}│",
         //     "type": "disk",
         //     "folders": "/"
         // },
-        // {
-        //     "key": "│ {#35} memory  {#keys}│",
-        //     "type": "memory"
-        // },
+        {
+            "key": "│ {#35} memory  {#keys}│",
+            "type": "memory"
+        },
         // {
         //     "key": "│ {#36}󰩟 network {#keys}│",
         //     "type": "localip",
         //     "format": "{ipv4} ({ifname})"
         // },
-        {
-            "key": "├───────────┤",
-            "type": "custom"
-        },
-        {
-            "key": "│ {#39} colors  {#keys}│",
-            "type": "colors",
-            "symbol": "circle"
-        },
+        // {
+        //     "key": "├───────────┤",
+        //     "type": "custom"
+        // },
+        // {
+        //     "key": "│ {#39} colors  {#keys}│",
+        //     "type": "colors",
+        //     "symbol": "circle"
+        // },
         {
             "key": "╰───────────╯",
             "type": "custom"
-        }
+        },
+	{
+	    "type": "colors",
+	    "symbol": "circle"
+	}
     ]
 }
