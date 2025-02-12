@@ -20,24 +20,28 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
 	--  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.8',
-		dependencies = { 'nvim-lua/plenary.nvim' }
-	},
+	-- {
+	-- 	'nvim-telescope/telescope.nvim',
+	-- 	tag = '0.1.8',
+	-- 	dependencies = { 'nvim-lua/plenary.nvim' }
+	-- },
 	-- File tree
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		requires = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup {}
-		end,
-	},
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	version = "*",
+	-- 	lazy = false,
+	-- 	requires = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("nvim-tree").setup {}
+	-- 	end,
+	-- },
 
 	-- Visualize buffers as tabs
 	{ 'akinsho/bufferline.nvim', version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
@@ -137,24 +141,13 @@ require("lazy").setup({
 				end)
 
 				require('mason-lspconfig').setup({
-					ensure_installed = { "tsserver", "rust_analyzer" }, -- Ensure Rust LSP is installed
+					ensure_installed = { "rust_analyzer" }, -- Ensure Rust LSP is installed
 					handlers = {
 						function(server_name)
 							local capabilities = require('cmp_nvim_lsp')
-							.default_capabilities()
+							    .default_capabilities()
 							require('lspconfig')[server_name].setup({
 								capabilities = capabilities,
-							})
-						end,
-
-						-- Custom handler for TypeScript
-						tsserver = function()
-							require('lspconfig').tsserver.setup({
-								capabilities = require('cmp_nvim_lsp')
-								.default_capabilities(),
-								on_attach = function(client, bufnr)
-									client.server_capabilities.documentFormattingProvider = false
-								end,
 							})
 						end,
 
@@ -162,7 +155,7 @@ require("lazy").setup({
 						rust_analyzer = function()
 							require('lspconfig').rust_analyzer.setup({
 								capabilities = require('cmp_nvim_lsp')
-								.default_capabilities(),
+								    .default_capabilities(),
 								settings = {
 									["rust-analyzer"] = {
 										cargo = { allFeatures = true },
@@ -338,7 +331,7 @@ require("lazy").setup({
 					Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 					Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
 					Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map(
-					"<leader>uL")
+						"<leader>uL")
 					Snacks.toggle.diagnostics():map("<leader>ud")
 					Snacks.toggle.line_number():map("<leader>ul")
 					Snacks.toggle.option("conceallevel",
@@ -347,7 +340,7 @@ require("lazy").setup({
 					Snacks.toggle.treesitter():map("<leader>uT")
 					Snacks.toggle.option("background",
 						{ off = "light", on = "dark", name = "Dark Background" }):map(
-					"<leader>ub")
+						"<leader>ub")
 					Snacks.toggle.inlay_hints():map("<leader>uh")
 					Snacks.toggle.indent():map("<leader>ug")
 					Snacks.toggle.dim():map("<leader>uD")
