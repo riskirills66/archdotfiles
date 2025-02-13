@@ -42,4 +42,42 @@ return {
         })
       end
     },
+    {
+      'neovim/nvim-lspconfig',
+      cmd = {'LspInfo', 'LspInstall', 'LspStart'},
+      event = {'BufReadPre', 'BufNewFile'},
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'williamboman/mason-lspconfig.nvim',
+      },
+      config = function()
+        local lsp_zero = require('lsp-zero')
+        lsp_zero.extend_lspconfig()
+
+        require('mason-lspconfig').setup({
+          ensure_installed = {
+            'lua_ls',  -- For Lua
+            -- Add other language servers you need here
+          },
+          handlers = {
+            lsp_zero.default_setup,
+            lua_ls = function()
+              require('lspconfig').lua_ls.setup({
+                settings = {
+                  Lua = {
+                    diagnostics = {
+                      globals = { 'vim' }
+                    },
+                    workspace = {
+                      library = vim.api.nvim_get_runtime_file("", true),
+                      checkThirdParty = false,
+                    }
+                  }
+                }
+              })
+            end,
+          }
+        })
+      end
+    },
   }
