@@ -42,7 +42,14 @@ require("lazy").setup({
 	-- 		require("nvim-tree").setup {}
 	-- 	end,
 	-- },
-
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use the latest stable version
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({})
+		end
+	},
 	-- Visualize buffers as tabs
 	{ 'akinsho/bufferline.nvim', version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	--  {
