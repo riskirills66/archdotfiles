@@ -39,3 +39,4 @@
 .config/tmux/plugins/vim-tmux-navigator
 .config/tmux/plugins/tmux-resurrect
 .config/tmux/plugins/
+.config/nvim/lazy-lock.json
