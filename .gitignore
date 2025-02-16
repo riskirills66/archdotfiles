@@ -26,7 +26,7 @@
 .config/VSCodium/Trust Tokens-journal
 .config/nvim/$MYVIMDIR/
 .config/go/
-.config/nchat/userstate.cbor
+.config/ncspot/userstate.cbor
 .config/cava/
 .config/cmus/
 .config/mimeapps.list
@@ -40,3 +40,9 @@
 .config/tmux/plugins/tmux-resurrect
 .config/tmux/plugins/
 .config/nvim/lazy-lock.json
+.config/nchat/emojis/
+.config/nchat/history/
+.config/nchat/profiles/
+.config/nchat/log.txt
+.config/nchat/log.txt.1
+.config/nchat/version
