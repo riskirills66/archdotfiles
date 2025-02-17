@@ -3,19 +3,19 @@
     "spacing": 4,
     "modules-left": [
         "custom/appsmenu",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "mpris"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
-        "mpris",
 	"custom/bluetooth",
         "wireplumber",
         "network",
 	"memory",
 	"cpu",
-	"disk",
+//	"disk",
         "tray",
         "clock",
         "battery",
@@ -24,9 +24,9 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-	    "active" : "\udb81\udf64",
-            "default": "\udb81\udf64",
-            "empty": "\udb81\udf64"
+	    "active" : "\uf111",
+            "default": "\uf111",
+            "empty": "\uf111"
         },
         "persistent-workspaces": {
             "*": [1, 2, 3, 4, 5]

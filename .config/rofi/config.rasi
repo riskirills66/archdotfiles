@@ -1,17 +1,17 @@
 * {
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #0b0a0c;
-    fg-color: #B6878B;
-    fgp-color: #5f5669;
-    b-radius: 0px;
+    b-color: #1d0b06;
+    fg-color: #D29D66;
+    fgp-color: #6e5e5a;
+    b-radius: 10px;
     g-padding: 8px;
-    hl-color: #B6878B;
+    hl-color: #D29D66;
     hlt-color: #090B0E;
-    alt-color: #0b0a0c;
-    wbg-color: #0b0a0c;
+    alt-color: #1d0b06;
+    wbg-color: #1d0b06;
     w-border: 2px solid;
-    w-border-color: #B6878B;
+    w-border-color: #D29D66;
     w-padding: 12px;
 }
 
