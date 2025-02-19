@@ -9,7 +9,7 @@
 
 window#waybar {
     font-family: Fira Mono Nerd Font, monospace;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(18, 18, 18, 0.8);
     border-bottom: 0px;
     color: #FFFFFF;
     transition-property: background-color;
