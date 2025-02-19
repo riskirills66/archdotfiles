@@ -27,4 +27,6 @@ require("lazy").setup({
 	require("plugins.snacks"),
 	require("plugins.tree"),
 	require("plugins.autopairs"),
+	require("plugins.markdown"),
+	require("plugins.trouble"),
 })
