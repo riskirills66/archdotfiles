@@ -6,9 +6,9 @@ return{
     require("toggleterm").setup({
       size = function(term)
         if term.direction == "horizontal" then
-          return 15  -- Adjust height for horizontal split (like VS Code)
+          return 8 -- Adjust height for horizontal split (like VS Code)
         elseif term.direction == "vertical" then
-          return vim.o.columns * 0.2  -- Adjust width for vertical split
+          return vim.o.columns * 0.3  -- Adjust width for vertical split
         end
       end,
       open_mapping = [[<leader>']], -- VS Code uses Ctrl+`

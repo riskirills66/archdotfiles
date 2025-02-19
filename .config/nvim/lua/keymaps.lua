@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>bx", ":bd<cr>")
 vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
 
 -- comment toggle
-vim.keymap.set({"n", "v"}, "<leader>/", ":CommentToggle<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>/", ":CommentToggle<cr>")
 
 -- format code using LSP
 vim.keymap.set("n", "<leader>fmd", vim.lsp.buf.format)
