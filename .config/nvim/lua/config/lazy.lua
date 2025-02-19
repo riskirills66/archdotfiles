@@ -29,4 +29,5 @@ require("lazy").setup({
 	require("plugins.autopairs"),
 	require("plugins.markdown"),
 	require("plugins.trouble"),
+	require("plugins.toggleterminal"),
 })
