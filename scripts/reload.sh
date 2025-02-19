@@ -59,6 +59,28 @@ generate_thumbnails() {
     # Apply wallpaper and color scheme
     feh --bg-fill "$TARGET_WALLPAPER" --no-fehbg
     wal -i ~/nostalgia.jpg -o ~/.cache/wal/colors-waybar.css
+
+    #!/bin/bash
+
+# Define the path to the Spicetify config file
+CONFIG_FILE="$HOME/.config/spicetify/config-xpui.ini"
+
+# Extract the current theme from the config file
+if [[ -f "$CONFIG_FILE" ]]; then
+    
+THEME=$(grep '^current_theme' "$CONFIG_FILE" | awk -F '=' '{print $2}' | xargs)
+
+    if [[ -n "$THEME" ]]; then
+        echo "Applying theme: $THEME"
+        pywal-spicetify "$THEME"
+    else
+        echo "Error: No theme found in config file."
+        exit 1
+    fi
+else
+    echo "Error: Spicetify config file not found at $CONFIG_FILE."
+fi
+    
     sed -i "s|/home/.*|/home/$(whoami)/.cache/wal/colors-waybar.css');|" ~/.config/waybar/style.css
     sed -i "s|/home/.*/.cache/wal/colors-waybar.css|/home/$(whoami)/.cache/wal/colors-waybar.css|" ~/.config/wlogout/style.css
     sed -i "s|/home/.*/nostalgia.jpg|/home/$(whoami)/nostalgia.jpg|" ~/.config/wlogout/style.css
