@@ -9,9 +9,9 @@
 
 window#waybar {
     font-family: Fira Mono Nerd Font, monospace;
-    background-color: rgba(18, 18, 18, 0.8);
-    border-bottom: 0px;
-    color: #FFFFFF;
+    background-color: @background; 
+    border-bottom: 2px;
+    color: @color14;
     transition-property: background-color;
     transition-duration: .5s;
 }

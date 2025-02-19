@@ -40,7 +40,7 @@ return{
 	vim.keymap.set("t", "<C-w>q", [[<C-\><C-n>:q<CR>]], { noremap = true, silent = true }) -- Close terminal
       end,
     })
-
+ 
     -- Keymaps like VS Code
     -- vim.keymap.set("n", "<C-`>", "<Cmd>ToggleTerm<CR>", { noremap = true, silent = true })
     -- vim.keymap.set("t", "<C-`>", "<Cmd>ToggleTerm<CR>", { noremap = true, silent = true })

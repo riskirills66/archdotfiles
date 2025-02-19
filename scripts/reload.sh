@@ -146,6 +146,7 @@ generate_thumbnails() {
     sed -i "s/^palette = 13=.*/palette = 13=$color13/" "$THEME_PYWAL_FILE"
     sed -i "s/^palette = 14=.*/palette = 14=$color14/" "$THEME_PYWAL_FILE"
     sed -i "s/^palette = 15=.*/palette = 15=$color15/" "$THEME_PYWAL_FILE"
+    sed -i "s/^background = .*/background = $background/" "$THEME_PYWAL_FILE"
     sed -i "s/^foreground = .*/foreground = $foreground/" "$THEME_PYWAL_FILE"
     sed -i "s/^cursor-color = .*/cursor-color = $cursor/" "$THEME_PYWAL_FILE"
 }
