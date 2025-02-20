@@ -10,7 +10,6 @@
 window#waybar {
     font-family: Fira Mono Nerd Font, monospace;
     background-color: @background; 
-    border-bottom: 2px;
     color: @color14;
     transition-property: background-color;
     transition-duration: .5s;
