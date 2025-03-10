@@ -6,8 +6,10 @@
 
 	"modules-left": [
 		"sway/workspaces",
+		"sway/window",
 	],
 	"modules-right": [
+		"mpris",
 		"pulseaudio",
 		"memory",
 		"cpu",
@@ -23,6 +25,12 @@
 		"format": "{name}"
 	},
 
+	"sway/window": {
+        	"format": "{title}",
+        	"max-length": 40,
+        	"all-outputs": true
+    	},
+
 	"clock#1": {
 		"format": "{:%a}",
 		"tooltip": false
@@ -36,6 +44,18 @@
 		"tooltip": false
 	},
 
+	"mpris": {
+        	"format": " {status_icon} {dynamic}",
+        	"interval": 1,
+        	"dynamic-len": 40,
+        	"status-icons": {
+            		"playing": "▶",
+            		"paused": "⏸",
+            		"stopped": ""
+        			},
+        	"dynamic-order": ["title", "artist"],
+        	"ignored-players": ["firefox"]
+    		},
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",

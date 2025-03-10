@@ -10,6 +10,11 @@ window#waybar {
 	color: @background;
 }
 
+#mpris,
+#window {
+	color: @color12;
+}
+
 #workspaces,
 #clock.1,
 #clock.2,
@@ -46,6 +51,8 @@ window#waybar {
 }
 
 #pulseaudio {
+    border-radius: 10px 0px 0px 10px;
+    border: 0px solid transparent;
 	color: @background;
 }
 #memory {
@@ -66,6 +73,8 @@ window#waybar {
 #memory,
 #cpu,
 #battery,
-#disk {
+#disk,
+#mpris,
+#window {
 	padding: 0 10px;
 }
