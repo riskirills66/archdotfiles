@@ -1,221 +1,161 @@
-# Swayimg configuration file.
-# vim: filetype=dosini
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+# ███████╗██╗    ██╗ █████╗ ██╗   ██╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+# ██╔════╝██║    ██║██╔══██╗╚██╗ ██╔╝    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+# ███████╗██║ █╗ ██║███████║ ╚████╔╝     ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ╚════██║██║███╗██║██╔══██║  ╚██╔╝      ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+# ███████║╚███╔███╔╝██║  ██║   ██║       ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+# ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝        ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
+                                                                                      
+### Variables
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+set $mod Mod4  # Logo key (Mod4 = Super/Windows key)
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-# This file contains the default configuration.
-# The viewer searches for the config file in the following locations:
-# 1. $XDG_CONFIG_HOME/swayimg/config
-# 2. $HOME/.config/swayimg/config
-# 3. $XDG_CONFIG_DIRS/swayimg/config
-# 4. /etc/xdg/swayimg/config
+# Vim-style directional keys
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+set $left h
+set $down j
+set $up k
+set $right l
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-# Any of these options can be overridden using the --config argument
-# on the command line, for instance:
-# $ swayimg --config="general.mode=gallery"
+# Applications
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+set $term ~/scripts/fastfetch.sh
+set $menu rofi -show drun -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')"
+set $reload exec ~/scripts/reload.sh
+set $clipboard cliphist list | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" | cliphist decode | wl-copy
+set $filemanager ghostty -e ~/scripts/yazi.sh
+set $screenshot exec ~/scripts/screenshot.sh
+set $emoji exec ~/scripts/emoji.sh
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-################################################################################
-# General configuration
-################################################################################
-[general]
-# Mode at startup (viewer/gallery)
-mode = viewer
-# Window position (parent or absolute coordinates, e.g. 100,200)
-position = parent
-# Window size (fullscreen/parent/image, or absolute size, e.g. 800,600)
-size = parent
-# Use window decoration (yes/no)
-decoration = no
-# Action performed by SIGUSR1 signal (same format as for key bindings)
-sigusr1 = reload
-# Action performed by SIGUSR2 signal (same format as for key bindings)
-sigusr2 = next_file
-# Application ID and window class name
-app_id = swayimg
+### Output Configuration
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+exec swaybg -i ~/nostalgia.jpg -m fill
 
-################################################################################
-# Viewer mode configuration
-################################################################################
-[viewer]
-# Window background color (RGBA)
-window = #00000000
-# Background for transparent images (grid/RGBA)
-transparency = grid
-# Default image scale (optimal/fit/width/height/fill/real)
-scale = optimal
-# Keep absolute zoom across images (yes/no)
-keep_zoom = no
-# Initial image position
-position = center
-# Fix position of the image on the window surface (yes/no)
-fixed = yes
-# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
-antialiasing = mks13
-# Run slideshow at startup (yes/no)
-slideshow = no
-# Slideshow image display time (seconds)
-slideshow_time = 3
-# Number of previously viewed images to store in cache
-history = 1
-# Number of preloaded images (read ahead)
-preload = 1
+output DP-2 mode 1920x1080@164.998Hz position 0,0
+output HDMI-A-1 mode 1920x1080@60Hz position 1920,0
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-################################################################################
-# Gallery mode configuration
-################################################################################
-[gallery]
-# Size of the thumbnail (pixels)
-size = 200
-# Max number of thumbnails in memory cache, 0 for unlimited
-cache = 100
-# Enable/disable storing thumbnails in persistent storage (yes/no)
-pstore = no
-# Fill the entire tile with thumbnail (yes/no)
-fill = yes
-# Anti-aliasing mode for thumbnails (none/box/bilinear/bicubic/mks13)
-antialiasing = mks13
-# Background color of the window (RGBA)
-window = #00000000
-# Background color of the tile (RGBA)
-background = #202020ff
-# Background color of the selected tile (RGBA)
-select = #404040ff
-# Border color of the selected tile (RGBA)
-border = #000000ff
-# Shadow color of the selected tile (RGBA)
-shadow = #000000ff
+# Workspace Assignments
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output HDMI-A-1
+workspace 9 output HDMI-A-1
+workspace 10 output HDMI-A-1
 
-################################################################################
-# Image list configuration
-################################################################################
-[list]
-# Default order (none/alpha/reverse/random)
-order = alpha
-# Looping list of images (yes/no)
-loop = yes
-# Read directories recursively (yes/no)
-recursive = no
-# Open all files in the directory of the specified file (yes/no)
-all = no
+# Default workspace on startup
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+exec swaymsg workspace 1
+exec_always autotiling
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-################################################################################
-# Font configuration
-################################################################################
-[font]
-# Font name
-name = monospace
-# Font size (pt)
-size = 14
-# Font color (RGBA)
-color = #ccccccff
-# Shadow color (RGBA)
-shadow = #000000d0
-# Background color (RGBA)
-background = #00000000
+### Startup Script
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+exec ~/scripts/initiate.sh
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-################################################################################
-# Image meta info scheme (format, size, EXIF, etc)
-################################################################################
-[info]
-# Show on startup (yes/no)
-show = yes
-# Timeout to hide info (seconds, 0 to always show)
-info_timeout = 5
-# Timeout to hide status message (seconds)
-status_timeout = 3
+### Key Bindings
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+# Basics
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+ctrl+Return exec $menu
+bindsym $mod+v exec $clipboard
+bindsym $mod+e exec $filemanager
+bindsym $mod+shift+s $screenshot
+bindsym print $screenshot
+bindsym $mod+ctrl+e $emoji
+bindsym $mod+Shift+c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+bindsym $mod+Shift+m reload
+bindsym ctrl+shift+alt+return exec $reload
+bindsym $mod+m exec swaynag -t warning -m 'Exit sway?' -B 'Yes, exit' 'swaymsg exit'
 
-# Display scheme for viewer mode (position = content)
-[info.viewer]
-top_left = +name,+format,+filesize,+imagesize,+exif
-top_right = index
-bottom_left = scale,frame
-bottom_right = status
+# Navigation
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-# Display scheme for gallery mode (position = content)
-[info.gallery]
-top_left = none
-top_right = none
-bottom_left = none
-bottom_right = name,status
+# Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
-################################################################################
-# Viewer mode key binding configuration: key = action [parameters]
-################################################################################
-[keys.viewer]
-F1 = help
-Home = first_file
-End = last_file
-Prior = prev_file
-Next = next_file
-Space = next_file
-Shift+r = rand_file
-Shift+d = prev_dir
-d = next_dir
-Shift+o = prev_frame
-o = next_frame
-c = skip_file
-Shift+s = slideshow
-s = animation
-f = fullscreen
-Return = mode
-Left = step_left 10
-Right = step_right 10
-Up = step_up 10
-Down = step_down 10
-Equal = zoom +10
-Plus = zoom +10
-Minus = zoom -10
-w = zoom width
-Shift+w = zoom height
-z = zoom fit
-Shift+z = zoom fill
-0 = zoom real
-BackSpace = zoom optimal
-Alt+s = scale
-bracketleft = rotate_left
-bracketright = rotate_right
-m = flip_vertical
-Shift+m = flip_horizontal
-a = antialiasing
-r = reload
-i = info
-Shift+Delete = exec rm "%"; skip_file
-Escape = exit
-q = exit
-# Mouse related
-ScrollLeft = step_right 5
-ScrollRight = step_left 5
-ScrollUp = step_up 5
-ScrollDown = step_down 5
-Ctrl+ScrollUp = zoom +10
-Ctrl+ScrollDown = zoom -10
-Shift+ScrollUp = prev_file
-Shift+ScrollDown = next_file
-Alt+ScrollUp = prev_frame
-Alt+ScrollDown = next_frame
+# Window Layouts
+bindsym $mod+f fullscreen
+bindsym $mod+t floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
-################################################################################
-# Gallery mode key binding configuration: key = action [parameters]
-################################################################################
-[keys.gallery]
-F1 = help
-Home = first_file
-End = last_file
-Left = step_left
-Right = step_right
-Up = step_up
-Down = step_down
-Prior = page_up
-Next = page_down
-c = skip_file
-f = fullscreen
-Return = mode
-a = antialiasing
-r = reload
-i = info
-Shift+Delete = exec rm "%"; skip_file
-Escape = exit
-q = exit
-# Mouse related
-ScrollLeft = step_right
-ScrollRight = step_left
-ScrollUp = step_up
-ScrollDown = step_down
+# Resizing
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Media Keys
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+# Clipboard Daemon
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+exec "pgrep -f 'wl-paste -t text' || wl-paste -t text --watch clipman store --no-persist"
+exec "pgrep -f 'wl-paste --type text' || wl-paste --type text --watch cliphist store"
+exec "pgrep -f 'wl-paste --type image' || wl-paste --type image --watch cliphist store"
+exec = nwg-look -a
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+# Window Borders
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+for_window [class=".*"] border pixel 0
+default_border pixel 0
+default_floating_border pixel 0
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+# Status Bar
+# ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+exec waybar
+include /etc/sway/config.d/*
+# ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
