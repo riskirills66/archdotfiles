@@ -1,21 +1,13 @@
+@import url('file:///home/riskirills/.cache/wal/colors-waybar.css');
+
 * {
-	font-size: 12px;
+	font-size: 12;
 	font-family: monospace;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
-}
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+	background: @background;
+	color: @background;
 }
 
 #workspaces,
@@ -28,40 +20,45 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: #1a1a1a;
+	background: @color12;
+}
+
+#workspaces {
+    border-radius: 0px 10px 10px 0px;
+    border: 0px solid transparent;
 }
 
 #workspaces button {
 	padding: 0 2px;
-	color: #fdf6e3;
+	color: @color2;
 }
 #workspaces button.focused {
-	color: #268bd2;
+	color: @background;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
+	background: @background;
+	border: @background;
 	padding: 0 3px;
 }
 
 #pulseaudio {
-	color: #268bd2;
+	color: @background;
 }
 #memory {
-	color: #2aa198;
+	color: @background;
 }
 #cpu {
-	color: #6c71c4;
+	color: @background;
 }
 #battery {
-	color: #859900;
+	color: @background;
 }
 #disk {
-	color: #b58900;
+	color: @background;
 }
 
 #clock,

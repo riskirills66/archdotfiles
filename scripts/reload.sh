@@ -23,7 +23,7 @@ generate_thumbnails() {
     done
 
     # Use Rofi to select wallpaper
-    SELECTED=$(echo -e "$OPTIONS" | rofi -dmenu -p "Select Wallpaper")
+    SELECTED=$(echo -e "$OPTIONS" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Wallpaper")
 
     # Check wallpaper selection
     if [ -z "$SELECTED" ]; then
@@ -102,11 +102,11 @@ fi
     echo "splash = false" >> ~/.config/hypr/hyprpaper.conf
 
     # Kill existing instances of hyprpaper and waybar
-    killall hyprpaper
+    killall swaybg
     killall waybar
 
     # Restart hyprpaper and waybar
-    hyprpaper &
+    swaybg -i ~/nostalgia.jpg -m fill &
     waybar &
 
     # Source pywal colors
@@ -179,7 +179,7 @@ select_icon_theme() {
     ICON_THEMES=$(ls /usr/share/icons ~/.local/share/icons 2>/dev/null | sort -u)
 
     # Step 2: Use Rofi to select an icon theme
-    SELECTED_ICON_THEME=$(echo "$ICON_THEMES" | rofi -dmenu -p "Select Icon Theme")
+    SELECTED_ICON_THEME=$(echo "$ICON_THEMES" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Icon Theme")
 
     # Check icon theme selection
     if [ -z "$SELECTED_ICON_THEME" ]; then
