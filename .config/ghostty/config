@@ -1,4 +1,4 @@
-background-opacity = 0.8
+background-opacity = 1
 window-decoration = false
 theme = pywal
 font-size = 10 
@@ -11,7 +11,7 @@ font-family-italic = auto
 font-family-bold-italic = auto
 
 window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 10, 1
 
 window-padding-balance = true
 window-vsync = true
@@ -25,4 +25,3 @@ clipboard-write = allow
 
 shell-integration =zsh
 cursor-opacity = 0.8
-
