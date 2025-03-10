@@ -1,9 +1,11 @@
+// -*- mode: json -*-
+
 {
 	"layer": "top",
 	"position": "bottom",
 
 	"modules-left": [
-		"hyprland/workspaces",
+		"sway/workspaces",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -54,7 +56,7 @@
 		"tooltip": false
 	},
 
-	"hyprland/workspaces": {
+	"sway/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"
 	},

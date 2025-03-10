@@ -1,8 +1,6 @@
-@import url('file:///home/riskirills/.cache/wal/colors-waybar.css');
-
 * {
-	font-size: 14px;
-	font-family: Fira Mono Nerd Font, monospace;
+	font-size: 12px;
+	font-family: monospace;
 }
 
 window#waybar {
@@ -12,12 +10,12 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: @background;
+	color: #1a1a1a;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #292b2e;
-	background: @background;
+	background: #1a1a1a;
 }
 
 #workspaces,
@@ -30,23 +28,23 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: @background;
+	background: #1a1a1a;
 }
 
 #workspaces button {
 	padding: 0 2px;
-	color: @color14;
+	color: #fdf6e3;
 }
 #workspaces button.focused {
-	color: @color14;
+	color: #268bd2;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: @background;
-	border: @background;
+	background: #1a1a1a;
+	border: #1a1a1a;
 	padding: 0 3px;
 }
 

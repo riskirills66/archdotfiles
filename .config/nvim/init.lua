@@ -5,6 +5,24 @@ require("core.mappings")
 
 -- Default to system clipboard
 vim.opt.clipboard = "unnamedplus"
+vim.o.laststatus = 3
+
+local pywal = require('pywal')
+
+pywal.setup()
+
+-- vim.cmd("silent! source ~/.cache/wal/colors-wal.vim")
+--
+-- local wal_colors = vim.fn.expand("~/.cache/wal/colors-wal.vim")
+-- if vim.fn.filereadable(wal_colors) == 1 then
+--     vim.cmd("source " .. wal_colors)
+-- else
+--     print("Pywal theme not found! Run 'wal' first.")
+-- end
+--
+-- vim.api.nvim_create_user_command("ReloadPywal", function()
+--     vim.cmd("source ~/.cache/wal/colors-wal.vim")
+-- end, {})
 
 -- -- Function to check if running in WSL
 -- local function is_wsl()
@@ -70,24 +88,24 @@ vim.opt.clipboard = "unnamedplus"
 -- 	end
 -- end
 
--- Modify the highlight commands to ensure terminal colors are used
-vim.cmd([[
-  set t_Co=256
-  set notermguicolors
-  hi Normal ctermbg=NONE guibg=NONE
-  hi NonText ctermbg=NONE guibg=NONE
-  hi LineNr ctermbg=NONE guibg=NONE
-  hi SignColumn ctermbg=NONE guibg=NONE
-  hi NormalFloat ctermbg=NONE guibg=NONE
-  hi FloatBorder ctermbg=NONE guibg=NONE
-]])
+-- vim.cmd([[
+--  set t_Co=256
+--  set notermguicolors
+--  hi Normal ctermbg=NONE guibg=NONE
+--  hi NonText ctermbg=NONE guibg=NONE
+--  hi LineNr ctermbg=NONE guibg=NONE
+--  hi SignColumn ctermbg=NONE guibg=NONE
+--  hi NormalFloat ctermbg=NONE guibg=NONE
+--  hi FloatBorder ctermbg=NONE guibg=NONE
+-- ]])
+
 
 require('lualine').setup {
 	options = {
 		icons_enabled = true,
-		theme = 'auto',
-		component_separators = { left = '', right = '' },
-		section_separators = { left = '', right = '' },
+		theme = 'pywal',
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -95,28 +113,29 @@ require('lualine').setup {
 		ignore_focus = {},
 		always_divide_middle = true,
 		always_show_tabline = true,
-		globalstatus = false,
+		globalstatus = true,
 		refresh = {
 			statusline = 100,
 			tabline = 100,
 			winbar = 100,
 		}
-	}, sections = {
-	lualine_a = { 'mode' },
-	lualine_b = { 'branch', 'diff', 'diagnostics' },
-	lualine_c = { 'filename' },
-	lualine_x = {
-		'recording',
-		'encoding', 'fileformat', 'filetype',
-		{
-			require("noice").api.statusline.mode.get,
-			cond = require("noice").api.statusline.mode.has,
-			color = { fg = "#ff9e64" },
-		}
 	},
-	lualine_y = { 'progress' },
-	lualine_z = { 'location' }
-},
+	sections = {
+		lualine_a = { { '', color = { fg = "#98c379" } }, 'mode' },
+		lualine_b = { 'branch', 'diff', 'diagnostics' },
+		lualine_c = { 'filename' },
+		lualine_x = {
+			'recording',
+			'encoding', 'fileformat', 'filetype',
+			{
+				require("noice").api.statusline.mode.get,
+				cond = require("noice").api.statusline.mode.has,
+				color = { fg = "#ff9e64" },
+			}
+		},
+		lualine_y = { 'progress' },
+		lualine_z = { 'location' }
+	},
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},

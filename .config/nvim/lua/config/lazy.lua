@@ -20,6 +20,7 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
+	{ 'AlphaTechnolog/pywal.nvim', as = 'pywal' },
 	require("plugins.ui"),
 	require("plugins.coding"),
 	require("plugins.lsp"),
