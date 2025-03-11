@@ -10,7 +10,7 @@ set $right l
 
 # Applications
 set $term ~/scripts/fastfetch.sh
-set $menu rofi -show drun -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')"
+set $menu exec ~/scripts/rofi.sh
 set $reload exec ~/scripts/reload.sh
 set $clipboard cliphist list | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" | cliphist decode | wl-copy
 set $filemanager ghostty -e ~/scripts/yazi.sh

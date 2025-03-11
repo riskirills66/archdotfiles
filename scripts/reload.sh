@@ -1,5 +1,11 @@
 #!/bin/bash
 
+dir="$HOME/.config/rofi/launchers/type-3"
+theme='style-10'
+
+dirparent="$HOME/.config/rofi/launchers/type-1"
+themeparent='style-3'
+
 # Directories
 WALLPAPER_DIR="$HOME/Downloads/"
 THUMBNAIL_DIR="/tmp/rofi_wallpaper_thumbnails"
@@ -23,7 +29,7 @@ generate_thumbnails() {
     done
 
     # Use Rofi to select wallpaper
-    SELECTED=$(echo -e "$OPTIONS" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Wallpaper")
+    SELECTED=$(echo -e "$OPTIONS" | rofi -dmenu -theme ${dir}/${theme}.rasi -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Wallpaper")
 
     # Check wallpaper selection
     if [ -z "$SELECTED" ]; then
@@ -179,7 +185,7 @@ select_icon_theme() {
     ICON_THEMES=$(ls /usr/share/icons ~/.local/share/icons 2>/dev/null | sort -u)
 
     # Step 2: Use Rofi to select an icon theme
-    SELECTED_ICON_THEME=$(echo "$ICON_THEMES" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Icon Theme")
+    SELECTED_ICON_THEME=$(echo "$ICON_THEMES" | rofi -dmenu -theme ${dirparent}/${themeparent}.rasi -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Icon Theme")
 
     # Check icon theme selection
     if [ -z "$SELECTED_ICON_THEME" ]; then
@@ -268,8 +274,9 @@ ghostty --title='SDDM Wallpaper Change' -e bash -c "
 "
 }
 
+
 # Main menu to choose between wallpaper + wal, icon theme, or change SDDM wallpaper
-MAIN_MENU=$(echo -e "Wallpaper + Wal\nIcons Selector\nChange SDDM Wallpaper" | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Option")
+MAIN_MENU=$(echo -e "Wallpaper + Wal\nIcons Selector\nChange SDDM Wallpaper" | rofi -dmenu -theme ${dirparent}/${themeparent}.rasi -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" -p "Select Option")
 
 # Run the selected option
 if [ "$MAIN_MENU" == "Wallpaper + Wal" ]; then
