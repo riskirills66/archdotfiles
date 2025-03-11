@@ -118,14 +118,14 @@ fi
     # Source pywal colors
     source ~/.cache/wal/colors.sh
 
+    WAL_RASI="$HOME/.config/rofi/colors/wal.rasi"
     # Only replace color variables in the Rofi config file
-    sed -i "s/b-color: .*/b-color: $background;/" ~/.config/rofi/config.rasi
-    sed -i "s/fg-color: .*/fg-color: $color14;/" ~/.config/rofi/config.rasi
-    sed -i "s/hl-color: .*/hl-color: $color14;/" ~/.config/rofi/config.rasi
-    sed -i "s/fgp-color: .*/fgp-color: $color8;/" ~/.config/rofi/config.rasi
-    sed -i "s/w-border-color: .*/w-border-color: $color14;/" ~/.config/rofi/config.rasi
-    sed -i "s/wbg-color: .*/wbg-color: $background;/" ~/.config/rofi/config.rasi
-    sed -i "s/alt-color: .*/alt-color: $background;/" ~/.config/rofi/config.rasi
+    sed -i "s/background:     #[A-Fa-f0-9]\{6\};/background:     $background;/" "$WAL_RASI"
+    sed -i "s/background-alt: #[A-Fa-f0-9]\{6\};/background-alt: $background;/" "$WAL_RASI"
+    sed -i "s/foreground:     #[A-Fa-f0-9]\{6\};/foreground:     $foreground;/" "$WAL_RASI"
+    sed -i "s/selected:       #[A-Fa-f0-9]\{6\};/selected:       $color14;/" "$WAL_RASI"
+    sed -i "s/active:         #[A-Fa-f0-9]\{6\};/active:         $color8;/" "$WAL_RASI"
+    sed -i "s/urgent:         #[A-Fa-f0-9]\{6\};/urgent:         $color14;/" "$WAL_RASI"
 
     echo "Rofi colors updated."
 

@@ -12,7 +12,7 @@ set $right l
 set $term ~/scripts/fastfetch.sh
 set $menu exec ~/scripts/rofi.sh
 set $reload exec ~/scripts/reload.sh
-set $clipboard cliphist list | rofi -dmenu -monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" | cliphist decode | wl-copy
+set $clipboard exec ~/scripts/clipboard.sh
 set $filemanager ghostty -e ~/scripts/yazi.sh
 set $screenshot exec ~/scripts/screenshot.sh
 set $emoji exec ~/scripts/emoji.sh
@@ -49,6 +49,7 @@ bindsym $mod+e exec $filemanager
 bindsym $mod+shift+s $screenshot
 bindsym print $screenshot
 bindsym $mod+ctrl+e $emoji
+bindsym $mod+period $emoji
 
 # Multimedia keys
 #

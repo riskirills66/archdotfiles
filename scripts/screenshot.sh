@@ -1,5 +1,8 @@
 #!/bin/bash
 
+dir="$HOME/.config/rofi/launchers/type-1"
+theme='style-3'
+
 # Define the directory where screenshots will be saved
 screenshot_dir="$HOME/Pictures/Screenshots"
 
@@ -16,7 +19,7 @@ focused_monitor=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name
 options="Screenshot Focused Monitor\nScreenshot Window\nScreenshot Region"
 
 # Show the rofi menu and get the selected option
-chosen=$(echo -e "$options" | rofi -dmenu -monitor "$focused_monitor" -p "Screenshot")
+chosen=$(echo -e "$options" | rofi -dmenu -theme ${dir}/${theme}.rasi -monitor "$focused_monitor" -p "Screenshot")
 
 # Check the user's selection and run the corresponding command
 case "$chosen" in
