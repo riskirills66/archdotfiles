@@ -125,7 +125,7 @@ fi
 
 
     # Path to BetterDiscord theme CSS
-    THEME_FILE="$HOME/.config/BetterDiscord/themes/midnight.theme.css"
+    THEME_FILE="$HOME/.var/app/com.discordapp.Discord/config/BetterDiscord/themes/midnight.theme.css"
 
     # Apply pywal colors to the midnight.theme.css file
     sed -i "s/--accent-1: .*/--accent-1: $color1;/" "$THEME_FILE"
