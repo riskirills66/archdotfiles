@@ -24,24 +24,30 @@ chosen=$(echo -e "$options" | rofi -dmenu -theme ${dir}/${theme}.rasi -monitor "
 # Check the user's selection and run the corresponding command
 case "$chosen" in
     "Screenshot Focused Monitor")
-        grim -o "$focused_monitor" "$screenshot_dir/screenshot_$timestamp.png"
-        wl-copy < "$screenshot_dir/screenshot_$timestamp.png"
+        filepath="$screenshot_dir/screenshot_$timestamp.png"
+        grim -o "$focused_monitor" "$filepath"
+        wl-copy < "$filepath"
+        notify-send "Screenshot Taken" "Saved to: $filepath" -i "$filepath"
         ;;
     "Screenshot Window")
-        grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$screenshot_dir/screenshot_$timestamp.png"
-        wl-copy < "$screenshot_dir/screenshot_$timestamp.png"
+        filepath="$screenshot_dir/screenshot_$timestamp.png"
+        grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$filepath"
+        wl-copy < "$filepath"
+        notify-send "Screenshot Taken" "Saved to: $filepath" -i "$filepath"
         ;;
     "Screenshot Region")
         sleep 0.2  # Small delay to ensure rofi fully exits before running slurp
         region=$(slurp)
         if [ -n "$region" ]; then
-            grim -g "$region" "$screenshot_dir/screenshot_$timestamp.png"
-            wl-copy < "$screenshot_dir/screenshot_$timestamp.png"
+            filepath="$screenshot_dir/screenshot_$timestamp.png"
+            grim -g "$region" "$filepath"
+            wl-copy < "$filepath"
+            notify-send "Screenshot Taken" "Saved to: $filepath" -i "$filepath"
         else
-            echo "No region selected"
+            notify-send "Screenshot Cancelled" "No region selected"
         fi
         ;;
     *)
-        echo "No valid option selected"
+        notify-send "Screenshot Cancelled" "No valid option selected"
         ;;
 esac
